@@ -14,11 +14,6 @@ const connect = function() {
     conn.write('Name: YHL');
   });
   
-  conn.on('connect', () => {
-    setTimeout(() => {
-      conn.write("Move: up");
-    }, 1000);
-  });
  
   let x = 1000;
   const moves = ["Move: up", "Move: up", "Move: up", "Move: up", "Move: right", "Move: down", "Move: right","Move: right", "Move: right"];
@@ -29,7 +24,6 @@ const connect = function() {
     }, x);
     x += 1000;
   }
-  
 
 
   // interpret incoming data as text

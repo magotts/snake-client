@@ -11,7 +11,7 @@ const setupInput = function () {
 };
 
 const handleUserInput = function() {
-  // your code here
+  const stdin = process.stdin;
   stdin.on('data', (key) => {
     process.stdout.write('\u0003');
     // \u0003 maps to ctrl+c input
