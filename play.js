@@ -1,25 +1,12 @@
-const net = require("net");
+// const net = require("net");
+// const connect = require("./client");
+
 const connect = require("./client");
-
-
-const setupInput = function () {
-  const stdin = process.stdin;
-  stdin.setRawMode(true);
-  stdin.setEncoding("utf8");
-  stdin.resume();
-  return stdin;
-};
-
-const handleUserInput = function() {
-  const stdin = process.stdin;
-  stdin.on('data', (key) => {
-    process.stdout.write('\u0003');
-    // \u0003 maps to ctrl+c input
-    process.exit();
-  });
-};
+const setupInput = require("./input");
 
 console.log("Connecting ...");
 connect();
+
 setupInput();
-handleUserInput();
+
+//module.exports = setupInput;
